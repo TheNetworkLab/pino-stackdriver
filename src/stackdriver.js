@@ -105,7 +105,7 @@ module.exports.toStackdriverStream = function (options = {}) {
     }
   }
 
-  const log = new Logging(opt).log(opt.logName)
+  const log = new Logging(opt).logSync(opt.logName)
   const writableStream = new stream.Writable({
     objectMode: true,
     write (chunk, encoding, callback) {
